@@ -148,13 +148,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 093f34eb53a725d4fb3ba1c050a8e922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bugPrefabs:
-  - {fileID: 714984095}
-  - {fileID: 2057623287}
-  - {fileID: 1067279942}
-  totalBugs: 5
-  spawnRange: 3
-  minDistance: 1.5
+  insectPrefab: {fileID: 0}
+  insectCount: 10
+  spawnRadius: 50
+  minDistance: 2
+  fixedHeight: 0
 --- !u!4 &36049965
 Transform:
   m_ObjectHideFlags: 0
@@ -306,6 +304,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &714984102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714984095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 093f34eb53a725d4fb3ba1c050a8e922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insectPrefab: {fileID: 714984095}
+  insectCount: 10
+  spawnRadius: 20
+  minDistance: 2
+  fixedHeight: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,6 +551,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u6606\u866B3"
       objectReference: {fileID: 0}
+    - target: {fileID: 7985482642964272301, guid: 09ee1e2c84df61d44bdfc746d8c5a25a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8392436794958363373, guid: 09ee1e2c84df61d44bdfc746d8c5a25a, type: 3}
       propertyPath: m_Size.x
       value: 5
@@ -597,7 +616,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8855974061729920629, guid: dbd7158cab40427418bce4d73e97373d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.8
+      value: 3.11
       objectReference: {fileID: 0}
     - target: {fileID: 8855974061729920629, guid: dbd7158cab40427418bce4d73e97373d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -605,7 +624,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8855974061729920629, guid: dbd7158cab40427418bce4d73e97373d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.3
+      value: 12.6
       objectReference: {fileID: 0}
     - target: {fileID: 8855974061729920629, guid: dbd7158cab40427418bce4d73e97373d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -645,6 +664,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8191324039051766991, guid: dbd7158cab40427418bce4d73e97373d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 714984098}
+    - targetCorrespondingSourceObject: {fileID: 8191324039051766991, guid: dbd7158cab40427418bce4d73e97373d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 714984102}
   m_SourcePrefab: {fileID: 100100000, guid: dbd7158cab40427418bce4d73e97373d, type: 3}
 --- !u!1001 &7706946997628626354
 PrefabInstance:
@@ -697,6 +719,10 @@ PrefabInstance:
     - target: {fileID: 1122183536895392899, guid: 19df806c38a73024992d1f1e847c8f16, type: 3}
       propertyPath: m_Name
       value: "\u6606\u866B2"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122183536895392899, guid: 19df806c38a73024992d1f1e847c8f16, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6416677025703831123, guid: 19df806c38a73024992d1f1e847c8f16, type: 3}
       propertyPath: m_Size.x

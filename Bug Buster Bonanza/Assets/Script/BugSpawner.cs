@@ -50,4 +50,5 @@ public class BugSpawner : MonoBehaviour
             if (!tooClose)
                 return pos;
         }
+    }
 }

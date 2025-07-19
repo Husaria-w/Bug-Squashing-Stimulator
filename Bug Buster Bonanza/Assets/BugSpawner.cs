@@ -1,53 +1,21 @@
-ï»¿using UnityEngine;
-using System.Collections.Generic;
+using UnityEngine;
 
 public class BugSpawner : MonoBehaviour
 {
-    public GameObject[] bugPrefabs;       // è™«å­é¢„åˆ¶ä½“æ•°ç»„
-    public int totalBugs = 5;
-    public float spawnRange = 5f;
-    public float minDistance = 2f;
-
-
-    private List<Vector3> usedPositions = new List<Vector3>();
+    public GameObject[] bugPrefabs;      // ÍÏ½øÈ¥ÈıÖÖ³æ×ÓµÄÔ¤ÖÆÌå
+    public Transform[] spawnPoints;      // ÍÏ½øÈ¥6¸ö¿ÕÎïÌåµÄ Transform
 
     void Start()
     {
-        for (int i = 0; i < totalBugs; i++)
-        {
-            Vector3 spawnPos = GetNonOverlappingPosition();
-
-            int prefabIndex = Random.Range(0, bugPrefabs.Length);
-            GameObject bug = Instantiate(bugPrefabs[prefabIndex], spawnPos, Quaternion.identity);
-
-            usedPositions.Add(spawnPos);
-        }
+        SpawnFixedBugs();
     }
 
-    // æ‰¾ä¸€ä¸ªä¸ä¸å·²ç”Ÿæˆè™«å­é‡å çš„ä½ç½®
-    Vector3 GetNonOverlappingPosition()
+    void SpawnFixedBugs()
     {
-        int maxTries = 100;
-        for (int i = 0; i < maxTries; i++)
+        foreach (Transform point in spawnPoints)
         {
-            Vector3 pos = new Vector3(
-                Random.Range(-spawnRange, spawnRange),
-                Random.Range(-spawnRange, spawnRange),
-                5f
-            );
-
-            bool tooClose = false;
-
-            foreach (Vector3 usedPos in usedPositions)
-            {
-                if (Vector3.Distance(pos, usedPos) < minDistance)
-                {
-                    tooClose = true;
-                    break;
-                }
-            }
-
-            if (!tooClose)
-                return pos;
+            int index = Random.Range(0, bugPrefabs.Length);
+            Instantiate(bugPrefabs[index], point.position, Quaternion.identity);
         }
+    }
 }

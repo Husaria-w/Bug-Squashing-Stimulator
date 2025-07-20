@@ -33,7 +33,6 @@ public class InsectWander : MonoBehaviour
 
             isMoving = true;
             //animator.SetBool("isMoving", true);
-            animator.Play("bugMove");
 
             // ÒÆ¶¯¹ý³Ì
             while (Vector3.Distance(transform.position, targetPos) > 0.1f)

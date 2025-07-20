@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BugSpawner : MonoBehaviour
 {
-    public GameObject insectPrefab; // 昆虫模型预制体
+    public GameObject[] insectPrefab; // 昆虫模型预制体
     public int insectCount = 10; // 要生成的昆虫数量
     public float spawnRadius = 50f; // 生成区域半径
     public float minDistance = 2f; // 昆虫之间最小距离
@@ -29,9 +29,10 @@ public class BugSpawner : MonoBehaviour
             }
 
             spawnPositions.Add(spawnPos);
+            int randomIndex = Random.Range(0, insectPrefab.Length);
 
             // 实例化昆虫模型
-            GameObject newInsect = Instantiate(insectPrefab, spawnPos, Quaternion.identity);
+            GameObject newInsect = Instantiate(insectPrefab[randomIndex], spawnPos, Quaternion.identity);
 
             // 禁用脚本，让新生成的昆虫不继续执行该脚本
             BugSpawner insectScript = newInsect.GetComponent<BugSpawner>();

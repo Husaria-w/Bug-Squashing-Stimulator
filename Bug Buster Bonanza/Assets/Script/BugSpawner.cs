@@ -4,42 +4,41 @@ using UnityEngine;
 
 public class BugSpawner : MonoBehaviour
 {
-    public GameObject[] insectPrefab; // 昆虫模型预制体
+    public GameObject insectPrefab; // 昆虫模型预制体
     public int insectCount = 10; // 要生成的昆虫数量
     public float spawnRadius = 50f; // 生成区域半径
     public float minDistance = 2f; // 昆虫之间最小距离
     public float fixedHeight = 0f; // 所有昆虫的固定高度
     private List<Vector3> spawnPositions = new List<Vector3>(); // 存储已生成位置
+    public float timer;
 
     void Start()
     {
-        SpawnInsects();
+        for (int i = 0; i < insectCount; i++)
+        {
+            SpawnInsects();
+        }
     }
 
     void SpawnInsects()
     {
-        for (int i = 0; i < insectCount; i++)
+        Vector3 spawnPos = GetRandomPosition();
+        // 确保生成位置不重叠
+        while (IsOverlapping(spawnPos))
         {
-            Vector3 spawnPos = GetRandomPosition();
+            spawnPos = GetRandomPosition();
+        }
 
-            // 确保生成位置不重叠
-            while (IsOverlapping(spawnPos))
-            {
-                spawnPos = GetRandomPosition();
-            }
+        spawnPositions.Add(spawnPos);
 
-            spawnPositions.Add(spawnPos);
-            int randomIndex = Random.Range(0, insectPrefab.Length);
+        // 实例化昆虫模型
+        GameObject newInsect = Instantiate(insectPrefab, spawnPos, Quaternion.identity);
 
-            // 实例化昆虫模型
-            GameObject newInsect = Instantiate(insectPrefab[randomIndex], spawnPos, Quaternion.identity);
-
-            // 禁用脚本，让新生成的昆虫不继续执行该脚本
-            BugSpawner insectScript = newInsect.GetComponent<BugSpawner>();
-            if (insectScript != null)
-            {
-                insectScript.enabled = false;
-            }
+        // 禁用脚本，让新生成的昆虫不继续执行该脚本
+        BugSpawner insectScript = newInsect.GetComponent<BugSpawner>();
+        if (insectScript != null)
+        {
+            insectScript.enabled = false;
         }
     }
 
@@ -62,5 +61,21 @@ public class BugSpawner : MonoBehaviour
             }
         }
         return false;
+    }
+
+
+    void Update()
+    {
+        timer += Time.deltaTime;
+        if(timer >= 10f)
+        {
+             for (int i = 0; i < 3; i++)
+             {
+                SpawnInsects();
+             }
+            Debug.Log("spawn");
+            timer = 0;
+        }
+       
     }
 }

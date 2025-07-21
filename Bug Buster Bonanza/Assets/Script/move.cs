@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-public class InsectWander : MonoBehaviour
+public class Move : MonoBehaviour
 {
     public float moveSpeed = 2f;              // 移动速度
     public float minMoveDistance = 1f;        // 最小移动距离

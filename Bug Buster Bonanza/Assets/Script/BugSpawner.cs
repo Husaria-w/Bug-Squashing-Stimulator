@@ -69,10 +69,7 @@ public class BugSpawner : MonoBehaviour
         timer += Time.deltaTime;
         if(timer >= 10f)
         {
-             for (int i = 0; i < 3; i++)
-             {
-                SpawnInsects();
-             }
+            SpawnInsects();
             Debug.Log("spawn");
             timer = 0;
         }

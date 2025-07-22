@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class InsectController : MonoBehaviour
+public class die : MonoBehaviour
 {
     public void Die()
     {

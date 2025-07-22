@@ -10,7 +10,7 @@ public class BugSpawner : MonoBehaviour
     public float spawnRadius = 50f; // 生成区域半径
     public float minDistance = 2f; // 昆虫之间最小距离
     public float fixedHeight = 0f; // 所有昆虫的固定高度
-    private List<Vector3> spawnPositions = new List<Vector3>(); // 存储已生成位置
+    public List<Vector3> spawnPositions = new List<Vector3>(); // 存储已生成位置
     public float timer;
 
     void Start()
@@ -21,7 +21,7 @@ public class BugSpawner : MonoBehaviour
         }
     }
 
-    void SpawnInsects()
+   public void SpawnInsects()
     {
         Vector3 spawnPos = GetRandomPosition();
         // 确保生成位置不重叠

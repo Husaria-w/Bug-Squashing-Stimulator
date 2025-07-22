@@ -5,7 +5,10 @@ public class ScoreManage : MonoBehaviour
 {
     public static ScoreManage instance;
     public int score = 0;
+    public int ckp;
+    public BugSpawner bug;
     public TextMeshProUGUI scoreText;
+    public GameObject hint;
 
     void Awake()
     {
@@ -21,5 +24,17 @@ public class ScoreManage : MonoBehaviour
     void UpdateScoreUI()
     {
         scoreText.text = "Score: " + score;
+    }
+    void Update()
+    {
+        if(score == ckp)
+        {
+            hint.SetActive(true);
+            for(int i =0; i<50; i++)
+            {
+                bug.SpawnInsects();
+            }
+
+        }
     }
 }

@@ -11,7 +11,8 @@ public class MouseSpray : MonoBehaviour
     public GameObject sprayPrefab;       // 喷雾预制体
     public float fixedZoneY = 1f;        // 生成 zone 时的固定 Y 值
     private float fixedY;
-
+    [SerializeField]    
+    private float sprayOffset; //烟雾偏移
     void Start()
     {
         mainCamera = Camera.main;
@@ -48,14 +49,14 @@ public class MouseSpray : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, sprayDistance, hitLayers))
         {
             Debug.Log(hit.point);// 生成喷雾效果（例如粒子系统）
-           var newSpray = Instantiate(sprayPrefab, hit.point, Quaternion.LookRotation(hit.normal));
+           var newSpray = Instantiate(sprayPrefab, new Vector3(hit.point.x, hit.point.y + sprayOffset, hit.point.z ), new Quaternion(0,0,0,1));
             newSpray.GetComponent<ParticleSystem>().Play();
             // 判断是否命中昆虫
 
            var cols= Physics.OverlapSphere(hit.point, radius);
             foreach (var c in cols)
             {
-                die insect = c.GetComponent<die>();
+                BugDeath insect = c.GetComponent<BugDeath>();
                 if (insect != null)
                 {
                     insect.Die(); // 昆虫死亡

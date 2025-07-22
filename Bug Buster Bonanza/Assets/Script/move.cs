@@ -18,6 +18,10 @@ public class Move : MonoBehaviour
         StartCoroutine(Wander());
     }
 
+    public void StopMove()
+    {
+        StopAllCoroutines();
+    }
     IEnumerator Wander()
     {
         while (true)

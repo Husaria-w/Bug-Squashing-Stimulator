@@ -6,6 +6,7 @@ public class MouseSpray : MonoBehaviour
     public float sprayDistance = 100f; // 射线检测距离
     public LayerMask hitLayers;
     public int bar;
+    public float radius;
     public GameObject aim;               // 可选的瞄准物体（暂未使用）
     public GameObject sprayPrefab;       // 喷雾预制体
     public float fixedZoneY = 1f;        // 生成 zone 时的固定 Y 值
@@ -50,11 +51,17 @@ public class MouseSpray : MonoBehaviour
            var newSpray = Instantiate(sprayPrefab, hit.point, Quaternion.LookRotation(hit.normal));
             newSpray.GetComponent<ParticleSystem>().Play();
             // 判断是否命中昆虫
-            die insect = hit.collider.GetComponent<die>();
-            if (insect != null)
+
+           var cols= Physics.OverlapSphere(hit.point, radius);
+            foreach (var c in cols)
             {
-                insect.Die(); // 昆虫死亡
+                die insect = c.GetComponent<die>();
+                if (insect != null)
+                {
+                    insect.Die(); // 昆虫死亡
+                }
             }
+          
             Destroy(newSpray, 2f);
         }
 

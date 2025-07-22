@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,21 +33,33 @@ public class BugSpawner : MonoBehaviour
         spawnPositions.Add(spawnPos);
 
         // 实例化昆虫模型
-        GameObject newInsect = Instantiate(insectPrefab, spawnPos, Quaternion.identity);
+        try
+        {
+            GameObject newInsect = Instantiate(insectPrefab, spawnPos, Quaternion.identity);
+            newInsect.SetActive(true);
+            BugSpawner insectScript = newInsect.GetComponent<BugSpawner>();
+            if (insectScript != null)
+            {
+                insectScript.enabled = false;
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.Log(gameObject);
+            Debug.Log(e);
+            throw (e);
+        }
+       
 
         // 禁用脚本，让新生成的昆虫不继续执行该脚本
-        BugSpawner insectScript = newInsect.GetComponent<BugSpawner>();
-        if (insectScript != null)
-        {
-            insectScript.enabled = false;
-        }
+      
     }
 
     // 随机生成一个位置，固定高度
     Vector3 GetRandomPosition()
     {
-        float x = Random.Range(-spawnRadius, spawnRadius);
-        float z = Random.Range(-spawnRadius, spawnRadius);
+        float x = UnityEngine. Random.Range(-spawnRadius, spawnRadius);
+        float z = UnityEngine. Random.Range(-spawnRadius, spawnRadius);
         return new Vector3(x, fixedHeight, z);
     }
 
@@ -67,7 +80,7 @@ public class BugSpawner : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if(timer >= 10f)
+        if(timer >= 2f)
         {
             SpawnInsects();
             Debug.Log("spawn");

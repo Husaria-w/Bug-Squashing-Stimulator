@@ -128,13 +128,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 36049965}
+  - component: {fileID: 36049966}
   m_Layer: 0
-  m_Name: BugSpawner
+  m_Name: BugSpawner1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &36049965
 Transform:
   m_ObjectHideFlags: 0
@@ -143,13 +144,81 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36049963}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.027824, y: -21.550688, z: -1.159448}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2022929907}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &36049966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36049963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 093f34eb53a725d4fb3ba1c050a8e922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insectPrefab: {fileID: 714984095}
+  insectCount: 10
+  spawnRadius: 20
+  minDistance: 2
+  fixedHeight: 0
+  timer: 0
+--- !u!1 &103706388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 103706389}
+  - component: {fileID: 103706390}
+  m_Layer: 0
+  m_Name: BugSpawner3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &103706389
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103706388}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2022929907}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &103706390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103706388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 093f34eb53a725d4fb3ba1c050a8e922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insectPrefab: {fileID: 1067279942}
+  insectCount: 10
+  spawnRadius: 20
+  minDistance: 2
+  fixedHeight: 0
+  timer: 0
 --- !u!1 &518251470
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,6 +315,7 @@ RectTransform:
   m_Children:
   - {fileID: 2038485902}
   - {fileID: 942648808}
+  - {fileID: 1341079934}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -386,7 +456,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 0.3
+    scalar: 0
     minScalar: 0
     maxCurve:
       serializedVersion: 2
@@ -5205,6 +5275,71 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 2.220446e-16, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &650154040
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 05dbae917b357b840a905069745374a8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -21.039185
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 05dbae917b357b840a905069745374a8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -22.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 05dbae917b357b840a905069745374a8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 68.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 05dbae917b357b840a905069745374a8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 05dbae917b357b840a905069745374a8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 05dbae917b357b840a905069745374a8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 05dbae917b357b840a905069745374a8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 05dbae917b357b840a905069745374a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 05dbae917b357b840a905069745374a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 05dbae917b357b840a905069745374a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 05dbae917b357b840a905069745374a8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2ca5021c2b2d8ab4590c3368cdbd0f7d, type: 2}
+    - target: {fileID: 919132149155446097, guid: 05dbae917b357b840a905069745374a8, type: 3}
+      propertyPath: m_Name
+      value: wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 05dbae917b357b840a905069745374a8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 05dbae917b357b840a905069745374a8, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -5355,7 +5490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   insectPrefab: {fileID: 714984095}
   insectCount: 21
-  spawnRadius: 10
+  spawnRadius: 20
   minDistance: 2
   fixedHeight: 0
   timer: 0
@@ -5640,12 +5775,62 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.57940894, y: -0, z: -0, w: 0.81503695}
-  m_LocalPosition: {x: -15.2, y: 98.4, z: -36.7}
+  m_LocalPosition: {x: -15.2, y: 42.3, z: -17.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 70.818, y: 0, z: 0}
+--- !u!1 &1016324977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1016324978}
+  - component: {fileID: 1016324979}
+  m_Layer: 0
+  m_Name: BugSpawner2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1016324978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016324977}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2022929907}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1016324979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016324977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 093f34eb53a725d4fb3ba1c050a8e922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insectPrefab: {fileID: 2057623287}
+  insectCount: 10
+  spawnRadius: 20
+  minDistance: 2
+  fixedHeight: 0
+  timer: 0
 --- !u!1 &1042287968
 GameObject:
   m_ObjectHideFlags: 0
@@ -5788,7 +5973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   insectPrefab: {fileID: 1067279942}
   insectCount: 7
-  spawnRadius: 10
+  spawnRadius: 20
   minDistance: 2
   fixedHeight: 0
   timer: 0
@@ -5831,6 +6016,142 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1341079933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1341079934}
+  - component: {fileID: 1341079936}
+  - component: {fileID: 1341079935}
+  m_Layer: 5
+  m_Name: Score
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1341079934
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341079933}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 518251474}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 543, y: 337}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1341079935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341079933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Score:0
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 0552d7ffe3a948c489803622338b00f6, type: 2}
+  m_sharedMaterial: {fileID: -6350438115687819101, guid: 0552d7ffe3a948c489803622338b00f6, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 90
+  m_fontSizeBase: 90
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: -356.20642, y: 0, z: 0, w: -82.67908}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1341079936
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341079933}
+  m_CullTransparentMesh: 1
 --- !u!1 &1406598859
 GameObject:
   m_ObjectHideFlags: 0
@@ -5869,6 +6190,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   bar: 20
+  radius: 2
   aim: {fileID: 1406598859}
   sprayPrefab: {fileID: 544684658}
   fixedZoneY: 1
@@ -6292,6 +6614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  scoreText: {fileID: 1341079935}
 --- !u!4 &1864877462
 Transform:
   m_ObjectHideFlags: 0
@@ -6337,6 +6660,40 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1406598864}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2022929906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2022929907}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2022929907
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022929906}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.027824, y: -21.550688, z: -1.159448}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 36049965}
+  - {fileID: 1016324978}
+  - {fileID: 103706389}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2038485901
@@ -6505,7 +6862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   insectPrefab: {fileID: 2057623287}
   insectCount: 7
-  spawnRadius: 10
+  spawnRadius: 20
   minDistance: 2
   fixedHeight: 0
   timer: 0
@@ -7242,7 +7599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7985482642964272301, guid: 09ee1e2c84df61d44bdfc746d8c5a25a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8107154500533861694, guid: 09ee1e2c84df61d44bdfc746d8c5a25a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7921,7 +8278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8191324039051766991, guid: dbd7158cab40427418bce4d73e97373d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8404508679294395746, guid: dbd7158cab40427418bce4d73e97373d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8196,7 +8553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1122183536895392899, guid: 19df806c38a73024992d1f1e847c8f16, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1222470080306654880, guid: 19df806c38a73024992d1f1e847c8f16, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8715,7 +9072,7 @@ SceneRoots:
   - {fileID: 5395990307289434834}
   - {fileID: 7706946997628626354}
   - {fileID: 4597677930598586438}
-  - {fileID: 36049965}
+  - {fileID: 2022929907}
   - {fileID: 1042287971}
   - {fileID: 518251474}
   - {fileID: 1475131755}
@@ -8723,3 +9080,4 @@ SceneRoots:
   - {fileID: 1724210743}
   - {fileID: 1498802493}
   - {fileID: 1933598218}
+  - {fileID: 650154040}

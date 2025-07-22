@@ -1,9 +1,11 @@
+using TMPro;
 using UnityEngine;
 
 public class ScoreManage : MonoBehaviour
 {
     public static ScoreManage instance;
     public int score = 0;
+    public TextMeshProUGUI scoreText;
 
     void Awake()
     {
@@ -14,6 +16,10 @@ public class ScoreManage : MonoBehaviour
     public void AddScore(int amount)
     {
         score += amount;
-        Debug.Log("当前分数：" + score);
+        UpdateScoreUI();
+    }
+    void UpdateScoreUI()
+    {
+        scoreText.text = "Score: " + score;
     }
 }

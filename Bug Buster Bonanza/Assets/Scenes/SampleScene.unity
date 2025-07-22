@@ -5869,7 +5869,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   bar: 20
-  text: {fileID: 942648805}
   aim: {fileID: 1406598859}
   sprayPrefab: {fileID: 544684658}
   fixedZoneY: 1
@@ -6430,6 +6429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fillImage: {fileID: 2038485903}
   follow: {fileID: 1406598860}
+  text: {fileID: 942648805}
   maxBar: 20
 --- !u!1 &2057623287 stripped
 GameObject:

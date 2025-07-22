@@ -6,7 +6,6 @@ public class MouseSpray : MonoBehaviour
     public float sprayDistance = 100f; // 射线检测距离
     public LayerMask hitLayers;
     public int bar;
-    public GameObject text;
     public GameObject aim;               // 可选的瞄准物体（暂未使用）
     public GameObject sprayPrefab;       // 喷雾预制体
     public float fixedZoneY = 1f;        // 生成 zone 时的固定 Y 值
@@ -34,10 +33,7 @@ public class MouseSpray : MonoBehaviour
             Vector3 hitPoint = ray.GetPoint(distance);
             transform.position = new Vector3(hitPoint.x, fixedY, hitPoint.z);
         }
-        if (bar == 0)
-        {
-            text.SetActive(true);
-        }
+
     }
 
     void TrySpawnSpray(Vector3 position)

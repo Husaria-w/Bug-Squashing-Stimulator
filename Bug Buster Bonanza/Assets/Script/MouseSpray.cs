@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class MouseSpray : MonoBehaviour
 {
+    public Camera mainCamera;          // 主摄像机
+    public float sprayDistance = 100f; // 射线检测距离
+    public LayerMask hitLayers;
     public int bar;
     public GameObject text;
-    public GameObject zone;              // 要生成的 zone 对象
     public GameObject aim;               // 可选的瞄准物体（暂未使用）
     public GameObject sprayPrefab;       // 喷雾预制体
     public float fixedZoneY = 1f;        // 生成 zone 时的固定 Y 值
-    private Camera mainCamera;
     private float fixedY;
 
     void Start()
@@ -19,9 +20,9 @@ public class MouseSpray : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && bar >0) // 鼠标左键点击生成
+        if (Input.GetMouseButtonDown(0)) // 鼠标左键点击生成
         {
-            SpawnSpray(transform.position);
+            TrySpawnSpray(transform.position);
         }
 
         // 鼠标实时跟随（X-Z 平面）
@@ -39,27 +40,29 @@ public class MouseSpray : MonoBehaviour
         }
     }
 
-    void SpawnSpray(Vector3 position)
+    void TrySpawnSpray(Vector3 position)
     {
-        // 生成喷雾
-        if (sprayPrefab != null)
+        Debug.Log("SpawnSpray"+bar);
+        if (bar <= 0)
         {
-            GameObject spray = Instantiate(sprayPrefab, position, Quaternion.identity);
-            ParticleSystem ps = spray.GetComponent<ParticleSystem>();
-            if (ps != null)
+            return;
+        }
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hit, sprayDistance, hitLayers))
+        {
+            Debug.Log(hit.point);// 生成喷雾效果（例如粒子系统）
+           var newSpray = Instantiate(sprayPrefab, hit.point, Quaternion.LookRotation(hit.normal));
+            newSpray.GetComponent<ParticleSystem>().Play();
+            // 判断是否命中昆虫
+            die insect = hit.collider.GetComponent<die>();
+            if (insect != null)
             {
-                ps.Play();
+                insect.Die(); // 昆虫死亡
             }
-            Destroy(spray, 2f);
+            Destroy(newSpray, 2f);
         }
 
         // 生成 zone（固定 Y 值）
-        if (zone != null)
-        {
-            Vector3 zonePosition = new Vector3(position.x, fixedZoneY, position.z);
-            Instantiate(zone, zonePosition, Quaternion.identity);
-            Destroy(gameObject, 2f);
-        }
         bar -= 1;
     }
 }

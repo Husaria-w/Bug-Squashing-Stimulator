@@ -30,7 +30,7 @@ public class ScoreManage : MonoBehaviour
         if(score == ckp)
         {
             hint.SetActive(true);
-            for(int i =0; i<50; i++)
+            for(int i =0; i<20; i++)
             {
                 bug.SpawnInsects();
             }

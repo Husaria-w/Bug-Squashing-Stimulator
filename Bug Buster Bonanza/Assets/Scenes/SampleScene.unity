@@ -7745,7 +7745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTime: 200
-  endCanvas: {fileID: 0}
+  endCanvas: {fileID: 1457993420}
   timerText: {fileID: 768607196}
 --- !u!1 &1933598217
 GameObject:

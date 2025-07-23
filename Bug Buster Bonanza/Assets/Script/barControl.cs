@@ -16,9 +16,13 @@ public class barControl : MonoBehaviour
         {
             text.SetActive(true);
         }
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1)&& follow.bar<20)
         {
             follow.bar += 4;
+            if(follow.bar > 20)
+            {
+                follow.bar = 20;
+            }
             text.SetActive(false);
         }
     }

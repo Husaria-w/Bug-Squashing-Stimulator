@@ -29,7 +29,7 @@ public class BugSpawner : MonoBehaviour
         {
             spawnPos = GetRandomPosition();
         }
-
+        Debug.Log(spawnPos);
         spawnPositions.Add(spawnPos);
 
         // 实例化昆虫模型

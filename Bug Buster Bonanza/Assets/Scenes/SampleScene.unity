@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insectPrefab: {fileID: 714984095}
-  insectCount: 10
+  insectCount: 15
   spawnRadius: 20
   minDistance: 2
   fixedHeight: 0
@@ -458,7 +458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insectPrefab: {fileID: 1067279942}
-  insectCount: 10
+  insectCount: 15
   spawnRadius: 20
   minDistance: 2
   fixedHeight: 0
@@ -6467,7 +6467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insectPrefab: {fileID: 2057623287}
-  insectCount: 10
+  insectCount: 15
   spawnRadius: 20
   minDistance: 2
   fixedHeight: 0
@@ -7713,7 +7713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  ckp: 100
+  ckp: 50
   bug: {fileID: 714984102}
   scoreText: {fileID: 1341079935}
   hint: {fileID: 801655631}

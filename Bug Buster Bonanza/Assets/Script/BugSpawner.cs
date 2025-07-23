@@ -6,6 +6,7 @@ using UnityEngine;
 public class BugSpawner : MonoBehaviour
 {
     public GameObject insectPrefab; // 昆虫模型预制体
+    public float SpawnTime;
     public int insectCount = 10; // 要生成的昆虫数量
     public float spawnRadius = 50f; // 生成区域半径
     public float minDistance = 2f; // 昆虫之间最小距离
@@ -80,7 +81,7 @@ public class BugSpawner : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if(timer >= 2f)
+        if(timer >= SpawnTime)
         {
             SpawnInsects();
             Debug.Log("spawn");
